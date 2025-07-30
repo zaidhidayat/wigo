@@ -46,6 +46,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            order: 1;
+        }
+
+        .mobile-menu {
+            order: 3;
+        }
+
+        nav {
+            order: 2;
+            flex-grow: 1;
+            text-align: right;
         }
         
         .logo {
@@ -104,7 +119,7 @@
         
         .hero {
             height: 80vh;
-            background: url('https://placehold.co/1920x1080') no-repeat center center/cover;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9ea68aae-a155-40c0-bc82-c913b8ba8bf1.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             position: relative;
@@ -770,17 +785,28 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column;
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .logo {
+                order: 1;
+                flex: 1;
+            }
+            
+            .mobile-menu {
+                order: 2;
+            }
+            
+            nav {
+                order: 3;
+                flex: 0 0 100%;
                 text-align: center;
             }
             
             nav ul {
                 margin-top: 1rem;
-            }
-            
-            nav ul li {
-                margin-left: 1rem;
-                margin-right: 1rem;
+                display: none;
             }
             
             .hero h1 {
@@ -833,12 +859,11 @@
                     <div class="mobile-menu" onclick="toggleMenu()">☰</div>
                     <nav>
                         <ul id="nav-menu">
-                            <li><a href="#home" class="active">Home</a></li>
-                            <li><a href="#gallery">Galeri</a></li>
-                            <li><a href="#videos">Video</a></li>
-                            <li><a href="#jeep-tours">Travel Jeep</a></li>
-                            <li><a href="#contact">Hubungi Kami</a></li>
-                            <li><a href="javascript:void(0)" onclick="showAdminLogin()">Admin</a></li>
+                            <li><a href="#home" class="active" onclick="closeMenu()">Home</a></li>
+                            <li><a href="#gallery" onclick="closeMenu()">Galeri</a></li>
+                            <li><a href="#videos" onclick="closeMenu()">Video</a></li>
+                            <li><a href="#jeep-tours" onclick="closeMenu()">Travel Jeep</a></li>
+                            <li><a href="#contact" onclick="closeMenu()">Hubungi Kami</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -868,7 +893,7 @@
                         <div class="features-grid">
                             <div class="feature-card">
                                 <div class="feature-img">
-                                    <img src="https://placehold.co/600x400?text=Telaga+Warna" alt="Telaga Warna Dieng dengan pemandangan danau berwarna-warni yang indah dikelilingi perbukitan">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0abe66c9-f2f8-477a-ab7a-a13e098ffc7c.png" alt="Telaga Warna Dieng dengan pemandangan danau berwarna-warni yang indah dikelilingi perbukitan">
                                 </div>
                                 <div class="feature-content">
                                     <h3>Telaga Warna</h3>
@@ -878,7 +903,7 @@
                             
                             <div class="feature-card">
                                 <div class="feature-img">
-                                    <img src="https://placehold.co/600x400?text=Kawah+Sikidang" alt="Pemandangan Kawah Sikidang dengan asap belerang yang keluar dari celah-celah batu">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/daeeb904-c8bb-4f06-ba97-891d70bf8926.png" alt="Pemandangan Kawah Sikidang dengan asap belerang yang keluar dari celah-celah batu">
                                 </div>
                                 <div class="feature-content">
                                     <h3>Kawah Sikidang</h3>
@@ -888,7 +913,7 @@
                             
                             <div class="feature-card">
                                 <div class="feature-img">
-                                    <img src="https://placehold.co/600x400?text=Candi+Arjuna" alt="Kompleks Candi Arjuna Dieng di pagi hari dengan kabut tipis di sekitarnya">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a22f7f92-a0a1-4cd2-b273-4a6edfcdfcb9.png" alt="Kompleks Candi Arjuna Dieng di pagi hari dengan kabut tipis di sekitarnya">
                                 </div>
                                 <div class="feature-content">
                                     <h3>Kompleks Candi Arjuna</h3>
@@ -909,42 +934,42 @@
                     
                     <div class="gallery-grid">
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Sunrise+Dieng" alt="Matahari terbit di Dieng dengan pemandangan perbukitan dan kabut yang indah">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/777fcec7-bafe-4c1e-ac74-b67cdb5054a6.png" alt="Matahari terbit di Dieng dengan pemandangan perbukitan dan kabut yang indah">
                             <div class="gallery-caption">
                                 <h3>Sunrise Dieng</h3>
                             </div>
                         </div>
                         
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Puri+Artha" alt="Hotel Puri Artha Dieng dengan arsitektur tradisional Jawa dan pemandangan gunung">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f74d1375-9da9-4f1b-819e-15af931936af.png" alt="Hotel Puri Artha Dieng dengan arsitektur tradisional Jawa dan pemandangan gunung">
                             <div class="gallery-caption">
                                 <h3>Puri Artha Dieng</h3>
                             </div>
                         </div>
                         
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Tangkuban+Ombak" alt="Spot foto populer Tangkuban Ombak dengan pemandangan seperti ombak membeku">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f1230f2-adc9-44d4-a857-c4a06ebaefe8.png" alt="Spot foto populer Tangkuban Ombak dengan pemandangan seperti ombak membeku">
                             <div class="gallery-caption">
                                 <h3>Tangkuban Ombak</h3>
                             </div>
                         </div>
                         
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Seruni+Point" alt="Seruni Point Dieng dengan hamparan bunga yang indah dan pemandangan lembah">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/072ea9ac-5f84-4b66-a6dd-ce9050faa62c.png" alt="Seruni Point Dieng dengan hamparan bunga yang indah dan pemandangan lembah">
                             <div class="gallery-caption">
                                 <h3>Seruni Point</h3>
                             </div>
                         </div>
                         
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Bukit+Pengilon" alt="Bukit Pengilon dengan pemandangan danau kecil dan bukit-bukit hijau">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d691fcd8-6899-4b5d-9600-bb17be044a54.png" alt="Bukit Pengilon dengan pemandangan danau kecil dan bukit-bukit hijau">
                             <div class="gallery-caption">
                                 <h3>Bukit Pengilon</h3>
                             </div>
                         </div>
                         
                         <div class="gallery-item">
-                            <img src="https://placehold.co/600x400?text=Dieng+Plateau" alt="Pemandangan luas Dieng Plateau dengan tanaman kentang dan bukit-bukit">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e71b5bd9-2b62-4aff-a2ac-069371f35f90.png" alt="Pemandangan luas Dieng Plateau dengan tanaman kentang dan bukit-bukit">
                             <div class="gallery-caption">
                                 <h3>Dieng Plateau</h3>
                             </div>
@@ -1020,7 +1045,7 @@
                     <div class="jeep-grid">
                         <div class="jeep-card">
                             <div class="jeep-img">
-                                <img src="https://placehold.co/600x400?text=Jeep+Sunrise+Tour" alt="Jeep wisata Dieng sedang berhenti di spot sunrise dengan pemandangan indah">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f26aadd3-14a6-4c92-a09b-6fc19e15dc30.png" alt="Jeep wisata Dieng sedang berhenti di spot sunrise dengan pemandangan indah">
                             </div>
                             <div class="jeep-info">
                                 <h3>Sunrise Tour</h3>
@@ -1032,7 +1057,7 @@
                         
                         <div class="jeep-card">
                             <div class="jeep-img">
-                                <img src="https://placehold.co/600x400?text=Jeep+Full+Day+Tour" alt="Jeep wisata melintasi jalan berbukit di Dieng dengan pemandangan spektakuler">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48346979-af14-457f-b4ae-44782ba2c398.png" alt="Jeep wisata melintasi jalan berbukit di Dieng dengan pemandangan spektakuler">
                             </div>
                             <div class="jeep-info">
                                 <h3>Full Day Tour</h3>
@@ -1044,7 +1069,7 @@
                         
                         <div class="jeep-card">
                             <div class="jeep-img">
-                                <img src="https://placehold.co/600x400?text=Private+Jeep+Tour" alt="Jeep pribadi berwarna merah sedang parkir di area wisata Dieng">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7aa99ac6-3392-4ab9-bda9-ecf97d592a9d.png" alt="Jeep pribadi berwarna merah sedang parkir di area wisata Dieng">
                             </div>
                             <div class="jeep-info">
                                 <h3>Private Jeep Tour</h3>
@@ -1145,6 +1170,7 @@
                         <p><a href="#gallery" style="color: white; text-decoration: none;">Galeri</a></p>
                         <p><a href="#jeep-tours" style="color: white; text-decoration: none;">Paket Jeep</a></p>
                         <p><a href="#contact" style="color: white; text-decoration: none;">Kontak</a></p>
+                        <p><a href="javascript:void(0)" onclick="showAdminLogin()" style="color: white; text-decoration: none;">Admin</a></p>
                     </div>
                     <div class="footer-section">
                         <h3>Kontak Kami</h3>
@@ -1210,7 +1236,7 @@
                         <div class="image-upload">
                             <h3>Tambah Gambar Baru</h3>
                             <div class="image-preview">
-                                <img id="preview-image" src="https://placehold.co/600x400" alt="Preview gambar yang akan diunggah">
+                                <img id="preview-image" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/87250db0-845b-4034-87f7-433d9cdfa051.png" alt="Preview gambar yang akan diunggah">
                             </div>
                             <input type="file" id="gallery-image" accept="image/*" onchange="previewImage(event)">
                             <div class="form-group">
@@ -1238,7 +1264,7 @@
                             <tbody id="gallery-list">
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://placehold.co/100x70" alt="Telaga Warna" style="max-height: 50px;"></td>
+                                    <td><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84c08e02-7fc3-4d99-b240-18ce8825bc33.png" alt="Telaga Warna" style="max-height: 50px;"></td>
                                     <td>Telaga Warna</td>
                                     <td>Pemandangan Telaga Warna di pagi hari</td>
                                     <td>
@@ -1248,7 +1274,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td><img src="https://placehold.co/100x70" alt="Kawah Sikidang" style="max-height: 50px;"></td>
+                                    <td><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fbcaa762-8d32-424b-a1fc-31fb38424600.png" alt="Kawah Sikidang" style="max-height: 50px;"></td>
                                     <td>Kawah Sikidang</td>
                                     <td>Kawah aktif dengan pemandangan unik</td>
                                     <td>
@@ -1375,7 +1401,7 @@
                             <tbody id="jeep-tour-list">
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://placehold.co/100x70" alt="Sunrise Tour" style="max-height: 50px;"></td>
+                                    <td><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e421e5fc-3caa-4bda-8c51-decd38c44818.png" alt="Sunrise Tour" style="max-height: 50px;"></td>
                                     <td>Sunrise Tour</td>
                                     <td>Tour melihat sunrise di Dieng</td>
                                     <td>Rp 200.000</td>
@@ -1386,7 +1412,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td><img src="https://placehold.co/100x70" alt="Full Day Tour" style="max-height: 50px;"></td>
+                                    <td><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92e1ca50-fc54-494d-8a95-606f090f32b2.png" alt="Full Day Tour" style="max-height: 50px;"></td>
                                     <td>Full Day Tour</td>
                                     <td>Tour sehari penuh menjelajahi Dieng</td>
                                     <td>Rp 350.000</td>
@@ -1554,6 +1580,12 @@
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
+        }
+
+        // Close mobile menu
+        function closeMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.remove('active');
         }
         
         // Show admin login
