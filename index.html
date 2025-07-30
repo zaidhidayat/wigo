@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIENG ACTUAL - Homestay & Jeep Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Previous styles remain the same */
+        
+        .editor-modal {
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        .admin-toolbar {
+            background-color: #1f2937;
+            color: white;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .hidden-toolbar {
+            transform: translateY(100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Previous content remains the same until before footer -->
+
+    <!-- Footer -->
+    <footer class="bg-orange-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DIENG ACTUAL</h3>
+                    <p class="mb-4">Your trusted partner for homestay and jeep adventure in Dieng Plateau. Offering comfortable accommodation and unforgettable experiences.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-orange-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-orange-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-orange-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" target="_blank" class="hover:text-orange-300">Home</a></li>
+                        <li><a href="gallery.html" target="_blank" class="hover:text-orange-300">Gallery</a></li>
+                        <li><a href="video-tour.html" target="_blank" class="hover:text-orange-300">Video Tour</a></li>
+                        <li><a href="contact.html" target="_blank" class="hover:text-orange-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Dieng Plateau, Wonosobo, Central Java, Indonesia</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+62 812-3456-7890</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@diengactual.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-orange-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <button id="adminLoginBtn" class="text-sm text-orange-300 hover:text-white">@dieng actual</button>
+                </div>
+                <div class="text-sm">
+                    &copy; 2025 DIENG ACTUAL. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center editor-modal hidden">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-orange-600">@dieng actual Login</h3>
+                <button id="closeLoginModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-gray-700 font-medium mb-1">Username</label>
+                    <input type="text" id="username" name="username" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200">
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-700 font-medium mb-1">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200">
+                </div>
+                <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Content Editor Modal -->
+    <div id="editorModal" class="fixed inset-0 z-50 flex items-center justify-center editor-modal hidden">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-orange-600">Edit Content</h3>
+                <button id="closeEditorModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form id="contentForm" class="space-y-4">
+                <input type="hidden" id="editElementId">
+                <div>
+                    <label for="editContentType" class="block text-gray-700 font-medium mb-1">Content Type</label>
+                    <select id="editContentType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200">
+                        <option value="text">Text</option>
+                        <option value="image">Image</option>
+                        <option value="price">Price</option>
+                    </select>
+                </div>
+                <div id="textContentGroup">
+                    <label for="editContent" class="block text-gray-700 font-medium mb-1">Content</label>
+                    <textarea id="editContent" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200"></textarea>
+                </div>
+                <div id="imageContentGroup" class="hidden space-y-2">
+                    <div>
+                        <label for="editImageUrl" class="block text-gray-700 font-medium mb-1">Image URL</label>
+                        <input type="text" id="editImageUrl" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200">
+                    </div>
+                    <div>
+                        <label for="editImageAlt" class="block text-gray-700 font-medium mb-1">Image Description (alt text)</label>
+                        <textarea id="editImageAlt" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-orange-200"></textarea>
+                    </div>
+                </div>
+                <div id="priceContentGroup" class="hidden">
+                    <label for="editPrice" class="block text-gray-700 font-medium mb-1">Price Value</label>
+                    <input type="text" id="editPrice" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200">
+                </div>
+                <div class="flex justify-end space-x-2 pt-2">
+                    <button type="button" id="cancelEdit" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition duration-300">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                        Save Changes
+                    </button>
+                    <button type="button" id="deleteContent" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                        Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Toolbar (initially hidden) -->
+    <div id="adminToolbar" class="admin-toolbar hidden-toolbar transition-transform duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-white font-medium">Admin Mode</div>
+            <div class="flex space-x-3">
+                <button id="addContentBtn" class="bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded text-sm">
+                    Add Content
+                </button>
+                <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded text-sm">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login Functionality
+        const adminLoginBtn = document.getElementById('adminLoginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const loginForm = document.getElementById('loginForm');
+        
+        // Editor Functionality
+        const editorModal = document.getElementById('editorModal');
+        const closeEditorModal = document.getElementById('closeEditorModal');
+        const contentForm = document.getElementById('contentForm');
+        const cancelEdit = document.getElementById('cancelEdit');
+        const deleteContent = document.getElementById('deleteContent');
+        
+        // Content Type Toggle
+        const editContentType = document.getElementById('editContentType');
+        const textContentGroup = document.getElementById('textContentGroup');
+        const imageContentGroup = document.getElementById('imageContentGroup');
+        const priceContentGroup = document.getElementById('priceContentGroup');
+        
+        // Admin Toolbar
+        const adminToolbar = document.getElementById('adminToolbar');
+        const addContentBtn = document.getElementById('addContentBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        
+        // Login Modal
+        adminLoginBtn.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+        });
+        
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+        });
+        
+        // Login Form Submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Check credentials (username: diengactual, password: heha)
+            if(username === 'diengactual' && password === 'heha') {
+                loginModal.classList.add('hidden');
+                adminToolbar.classList.remove('hidden-toolbar');
+                
+                // Enable edit mode on all editable elements
+                document.querySelectorAll('[data-editable]').forEach(el => {
+                    el.style.position = 'relative';
+                    
+                    const editBtn = document.createElement('button');
+                    editBtn.className = 'absolute -right-2 -top-2 bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-orange-600';
+                    editBtn.innerHTML = '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>';
+                    editBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openEditorForElement(el);
+                    });
+                    
+                    el.appendChild(editBtn);
+                });
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+        
+        // Editor Modal
+        closeEditorModal.addEventListener('click', () => {
+            editorModal.classList.add('hidden');
+        });
+        
+        cancelEdit.addEventListener('click', () => {
+            editorModal.classList.add('hidden');
+        });
+        
+        // Content Type Toggle
+        editContentType.addEventListener('change', (e) => {
+            const type = e.target.value;
+            
+            textContentGroup.classList.add('hidden');
+            imageContentGroup.classList.add('hidden');
+            priceContentGroup.classList.add('hidden');
+            
+            if(type === 'text') {
+                textContentGroup.classList.remove('hidden');
+            } else if(type === 'image') {
+                imageContentGroup.classList.remove('hidden');
+            } else if(type === 'price') {
+                priceContentGroup.classList.remove('hidden');
+            }
+        });
+        
+        // Open Editor for Element
+        function openEditorForElement(element) {
+            const elementId = element.id || 'element-' + Math.random().toString(36).substr(2, 9);
+            element.id = elementId;
+            
+            document.getElementById('editElementId').value = elementId;
+            editorModal.classList.remove('hidden');
+            
+            // Determine content type
+            if(element.tagName === 'IMG') {
+                editContentType.value = 'image';
+                document.getElementById('editImageUrl').value = element.src;
+                document.getElementById('editImageAlt').value = element.alt;
+                
+                textContentGroup.classList.add('hidden');
+                imageContentGroup.classList.remove('hidden');
+                priceContentGroup.classList.add('hidden');
+            } else if(element.classList.contains('price')) {
+                editContentType.value = 'price';
+                document.getElementById('editPrice').value = element.textContent.replace(/[^0-9]/g, '');
+                
+                textContentGroup.classList.add('hidden');
+                imageContentGroup.classList.add('hidden');
+                priceContentGroup.classList.remove('hidden');
+            } else {
+                editContentType.value = 'text';
+                document.getElementById('editContent').value = element.textContent;
+                
+                textContentGroup.classList.remove('hidden');
+                imageContentGroup.classList.add('hidden');
+                priceContentGroup.classList.add('hidden');
+            }
+        }
+        
+        // Save Content Changes
+        contentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const elementId = document.getElementById('editElementId').value;
+            const element = document.getElementById(elementId);
+            const contentType = editContentType.value;
+            
+            if(contentType === 'text') {
+                const newContent = document.getElementById('editContent').value;
+                element.textContent = newContent;
+            } else if(contentType === 'image') {
+                const newUrl = document.getElementById('editImageUrl').value;
+                const newAlt = document.getElementById('editImageAlt').value;
+                element.src = newUrl;
+                element.alt = newAlt;
+            } else if(contentType === 'price') {
+                const newPrice = document.getElementById('editPrice').value;
+                if(element.classList.contains('price-with-currency')) {
+                    element.textContent = `IDR ${newPrice}`;
+                } else {
+                    element.textContent = newPrice;
+                }
+            }
+            
+            editorModal.classList.add('hidden');
+        });
+        
+        // Delete Content
+        deleteContent.addEventListener('click', () => {
+            const elementId = document.getElementById('editElementId').value;
+            const element = document.getElementById(elementId);
+            
+            if(element && confirm('Are you sure you want to delete this content?')) {
+                element.remove();
+                editorModal.classList.add('hidden');
+            }
+        });
+        
+        // Add Content Button
+        addContentBtn.addEventListener('click', () => {
+            alert('Add content functionality would open a UI to select where to add new content');
+            // In a full implementation, this would open an interface to select where to add new content
+            // and what type of content to add (text, image, etc.)
+        });
+        
+        // Logout Button
+        logoutBtn.addEventListener('click', () => {
+            adminToolbar.classList.add('hidden-toolbar');
+            
+            // Remove all edit buttons
+            document.querySelectorAll('[data-editable] button').forEach(btn => {
+                btn.remove();
+            });
+        });
+        
+        // Make elements editable by adding data-editable attribute
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mark all potentially editable elements
+            const editableSelectors = [
+                'h1', 'h2', 'h3', 'p', 'li', 'span:not(.icon)', 'img', 
+                '.price', '.service-title', '.service-description'
+            ];
+            
+            editableSelectors.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.setAttribute('data-editable', 'true');
+                });
+            });
+        });
+        
+        // WhatsApp Form Submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const people = document.getElementById('people').value;
+            const date = document.getElementById('date').value;
+            const nights = document.getElementById('nights').value;
+            
+            // Format WhatsApp message
+            const message = `Halo DIENG ACTUAL,%0A%0ASaya ingin memesan:%0A%0ANama: ${name}%0AWhatsApp: ${phone}%0AEmail: ${email}%0AJumlah Orang: ${people}%0ATanggal: ${date}%0AMalam: ${nights}%0A%0ASaya ingin menanyakan tentang paket dan ketersediaannya. Terima kasih.`;
+            
+            // Two WhatsApp numbers to choose from
+            const waNumbers = ['6281234567890', '6289876543210']; // Replace with actual numbers
+            
+            // Create buttons for each WhatsApp number
+            const confirmation = confirm(`Pilih nomor WhatsApp untuk mengirim pesan?\n\n1. +62 812-3456-7890\n2. +62 898-7654-3210\n\nKlik OK untuk nomor pertama, Cancel untuk nomor kedua.`);
+            
+            const selectedNumber = confirmation ? waNumbers[0] : waNumbers[1];
+            window.open(`https://wa.me/${selectedNumber}?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
